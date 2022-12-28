@@ -5,6 +5,15 @@ services:
   idea-test:
     container_name: idea-test
     build: .
-    restart: always
     ports:
       - "5457:5457"
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "13306:3306"
+    volumes:
+      - ${PWD}/migrations:/docker-entrypoint-initdb.d
+
