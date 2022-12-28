@@ -1,0 +1,6 @@
+### Calling the API with GET
+GET http://{{ host }}:{{ port }}/welcome
+
+
+### Calling the API with POST
+POST http://{{ host }}:{{ port }}/hello?name=IDEA
