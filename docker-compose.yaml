@@ -8,7 +8,8 @@ services:
     ports:
       - "5457:5457"
 
-  mysql:
+  idea-test-db:
+    container_name: idea-test-db
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=root
@@ -16,4 +17,3 @@ services:
       - "13306:3306"
     volumes:
       - ${PWD}/migrations:/docker-entrypoint-initdb.d
-
